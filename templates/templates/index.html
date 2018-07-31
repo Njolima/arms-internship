@@ -1,0 +1,19 @@
+
+{% load static from  staticfiles %}
+<link rel="stylesheet"type="text/css"href="{%  static 'music/css/style.css' %}">
+{% if object_list %}
+    <ul>
+        {% for album in object_list %}
+            <li>
+                <a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a>
+            </li>
+        {% endfor %}
+
+    </ul>
+{% else %}
+    <h4>there is no album here</h4>
+
+{% endif %}
+<div>
+    <a href="{{ url 'music/register' }}">REGISTER</a>
+</div>

@@ -1,0 +1,15 @@
+{% load static from  staticfiles %}
+<link rel="stylesheet"type="text/css"href="{%  static 'music/css/style.css' %}">
+{% if object_list %}
+    <ul>
+    {% for album in object_list %}
+        <li>
+       <p>{{ Song.song_title }}</p>
+        </li>
+    {% endfor %}
+
+    </ul>
+    {% else %}
+        <h4>there is no album hereeee</h4>
+
+{% endif %}
